@@ -21,7 +21,7 @@
       line-height: 1.5;
       scroll-behavior: smooth;
       font-size: 16px;
-      overflow-x: hidden; /* prevent any horizontal scroll */
+      overflow-x: hidden;
     }
 
     ::-webkit-scrollbar {
@@ -340,7 +340,33 @@
       color: #6c7a91;
     }
 
-    /* ========== MOBILE SCREENS: ARROWS CENTERED ON LEFT & RIGHT BORDER ========== */
+    /* ========== TABLET SCREENS (769px – 1024px) ========== */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .modal-container {
+        width: 88vw;
+        max-width: 900px;
+      }
+      .slider-img {
+        height: 420px;
+      }
+      .modal-header h2 {
+        font-size: 1.8rem;
+      }
+      .slider-btn {
+        font-size: 28px;
+        padding: 10px 16px;
+      }
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+        padding: 20px 28px 50px;
+      }
+      .card-info h3 {
+        font-size: 1.45rem;
+      }
+    }
+
+    /* ========== MOBILE SCREENS (up to 768px) ========== */
     @media (max-width: 768px) {
       body {
         font-size: 18px;
@@ -379,7 +405,7 @@
         width: 95vw;
         max-width: 95vw;
         border-radius: 28px;
-        overflow-x: visible;   /* allow arrows to protrude slightly without clipping */
+        overflow-x: visible;
       }
       .modal-header {
         padding: 18px 20px 8px;
@@ -396,12 +422,11 @@
       .slider-area {
         padding: 16px 20px;
       }
-      /* mobile: image takes full width, height auto, larger display */
       .slider-wrapper {
         position: relative;
         background: #020617;
         border-radius: 28px;
-        overflow: visible;    /* critical to show full buttons on borders */
+        overflow: visible;
         margin: 0;
       }
       .slider-img {
@@ -413,7 +438,6 @@
         display: block;
         border-radius: 24px;
       }
-      /* arrows placed exactly with center on left/right borders */
       .slider-btn {
         position: absolute;
         top: 50%;
@@ -432,12 +456,10 @@
         z-index: 20;
         border: 1px solid rgba(59,130,246,0.5);
       }
-      /* left button: center exactly on left border */
       .slider-btn.prev {
         left: 0;
         transform: translate(-50%, -50%);
       }
-      /* right button: center exactly on right border */
       .slider-btn.next {
         right: 0;
         transform: translate(50%, -50%);
@@ -468,7 +490,7 @@
       }
     }
 
-    /* extra small devices: adjust button size and image min-height */
+    /* extra small devices */
     @media (max-width: 480px) {
       .hero h1 {
         font-size: 2rem;
