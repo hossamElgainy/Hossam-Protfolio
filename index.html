@@ -4,620 +4,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Hossam Elganiny | Software Engineer Portfolio</title>
-  <!-- Google Fonts + Font Awesome 6 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Outfit + DM Sans + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #0a0f1f 0%, #0c1222 100%);
-      color: #eef2ff;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-      font-size: 16px;
-      overflow-x: hidden;
-      /* padding-bottom for fixed footer (increased to match larger footer height) */
-      padding-bottom: 100px;
-      position: relative;
-      min-height: 100vh;
-    }
-
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1e293b;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #3b82f6;
-      border-radius: 8px;
-    }
-
-    /* hero section */
-    .hero {
-      background: radial-gradient(ellipse at 70% 30%, #0f172a, #020617);
-      padding: 50px 24px 60px;
-      text-align: center;
-      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
-    }
-    /* Larger profile image */
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #3b82f6;
-      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
-      margin-bottom: 24px;
-      background: #1e293b;
-    }
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #ffffff, #7dd3fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: -0.5px;
-    }
-    .hero .badge-exp {
-      display: inline-block;
-      background: #1e293b;
-      backdrop-filter: blur(4px);
-      padding: 6px 14px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin: 16px 0 12px;
-      border: 1px solid #334155;
-    }
-    .hero .specialty {
-      color: #94a3b8;
-      font-size: 1.15rem;
-      margin-bottom: 20px;
-    }
-    .contact-social {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 24px;
-    }
-    .contact-social a {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #1e293b80;
-      padding: 8px 18px;
-      border-radius: 40px;
-      backdrop-filter: blur(4px);
-    }
-    .contact-social a i {
-      font-size: 1.2rem;
-      color: #38bdf8;
-    }
-    .contact-social a:hover {
-      background: #3b82f6;
-      color: white;
-      transform: translateY(-2px);
-    }
-    .contact-social a:hover i {
-      color: white;
-    }
-
-    /* filter buttons */
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-      margin: 40px 20px 30px;
-    }
-    .filter-btn {
-      background: #111827;
-      border: none;
-      padding: 12px 28px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 60px;
-      color: #cbd5e1;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: 'Inter', sans-serif;
-      backdrop-filter: blur(4px);
-      border: 1px solid #2d3a5e;
-    }
-    .filter-btn i {
-      margin-right: 8px;
-    }
-    .filter-btn.active {
-      background: #3b82f6;
-      color: white;
-      border-color: #3b82f6;
-      box-shadow: 0 8px 18px -6px #3b82f680;
-    }
-    .filter-btn:hover:not(.active) {
-      background: #1f2a48;
-      color: #f1f5f9;
-      border-color: #4f7df3;
-    }
-
-    /* projects grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 28px;
-      padding: 20px 32px 60px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .project-card {
-      background: #111827cc;
-      backdrop-filter: blur(8px);
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid #2d3a5e;
-      transition: transform 0.25s ease, box-shadow 0.3s;
-      cursor: pointer;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
-    }
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: #3b82f6;
-      box-shadow: 0 25px 35px -12px #0f172a;
-    }
-    .card-img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-      transition: 0.3s;
-    }
-    .card-info {
-      padding: 22px 20px 24px;
-    }
-    .card-info h3 {
-      font-size: 1.55rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.2px;
-    }
-    .category-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 14px 0 6px;
-    }
-    .cat-badge {
-      background: #0f172a;
-      padding: 6px 14px;
-      border-radius: 40px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-left: 2px solid #3b82f6;
-    }
-    .cat-badge.wordpress {
-      border-left-color: #f97316;
-    }
-
-    /* modal overlay */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(3, 7, 18, 0.92);
-      backdrop-filter: blur(12px);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: 20px;
-    }
-    .modal-container {
-      background: #0f172ae6;
-      border-radius: 42px;
-      max-width: 1200px;
-      width: 92vw;
-      max-height: 90vh;
-      overflow-y: auto;
-      overflow-x: hidden;
-      border: 1px solid #3b82f670;
-      box-shadow: 0 40px 70px rgba(0,0,0,0.7);
-      animation: fadeUp 0.25s ease;
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 32px 12px;
-      border-bottom: 1px solid #1e2a44;
-    }
-    .modal-header h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-    }
-    .close-modal {
-      font-size: 38px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: #94a3b8;
-      transition: 0.2s;
-      line-height: 1;
-    }
-    .close-modal:hover {
-      color: #facc15;
-    }
-    .modal-category {
-      padding: 16px 32px 0;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .slider-area {
-      padding: 24px 32px;
-    }
-    .slider-wrapper {
-      position: relative;
-      background: #020617;
-      border-radius: 32px;
-      overflow: hidden;
-    }
-    .slider-img {
-      width: 100%;
-      height: 460px;
-      object-fit: contain;
-      background: #0a0f1f;
-      transition: 0.2s;
-      display: block;
-    }
-    /* Desktop: arrows inside image (overlay) */
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #0f172abb;
-      border: none;
-      font-size: 32px;
-      color: white;
-      padding: 14px 18px;
-      cursor: pointer;
-      border-radius: 60px;
-      backdrop-filter: blur(12px);
-      transition: 0.2s;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .slider-btn.prev { left: 20px; }
-    .slider-btn.next { right: 20px; }
-    .slider-btn:hover {
-      background: #3b82f6;
-      transform: translateY(-50%) scale(1.05);
-    }
-    .slider-btn:active {
-      transform: translateY(-50%) scale(0.98);
-    }
-    .image-counter {
-      text-align: center;
-      margin-top: 16px;
-      font-size: 0.9rem;
-      color: #94a3b8;
-      font-weight: 500;
-    }
-    .modal-description {
-      padding: 12px 32px 36px;
-      font-size: 1.05rem;
-      color: #cbd5e6;
-      line-height: 1.55;
-    }
-    .modal-description p {
-      background: #00000040;
-      padding: 20px 26px;
-      border-radius: 32px;
-      border-left: 4px solid #3b82f6;
-      font-size: 1rem;
-    }
-
-    /* FIXED FOOTER - ENHANCED: larger height, bigger text, bold contact link */
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      padding: 18px 24px;          /* increased vertical padding → higher footer */
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(59,130,246,0.5);
-      font-size: 1.15rem;          /* larger base text */
-      color: #cbd5e6;
-      z-index: 99;
-      font-weight: 500;
-      letter-spacing: 0.4px;
-    }
-    footer i {
-      color: #3b82f6;
-      margin-right: 8px;
-      font-size: 1.2rem;
-    }
-    footer a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: 800;            /* extra bold */
-      font-size: 1.2rem;
-      transition: 0.2s;
-      border-bottom: 2px solid transparent;
-    }
-    footer a:hover {
-      color: #facc15;
-      border-bottom-color: #facc15;
-    }
-
-    /* ========== TABLET SCREENS (769px – 1024px) ========== */
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .profile-img {
-        width: 150px;
-        height: 150px;
-      }
-      .modal-container {
-        width: 88vw;
-        max-width: 900px;
-      }
-      .slider-img {
-        height: 420px;
-      }
-      .modal-header h2 {
-        font-size: 1.8rem;
-      }
-      .slider-btn {
-        font-size: 28px;
-        padding: 10px 16px;
-      }
-      .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 24px;
-        padding: 20px 28px 50px;
-      }
-      .card-info h3 {
-        font-size: 1.45rem;
-      }
-      body {
-        padding-bottom: 95px; /* adjust for taller footer */
-      }
-      footer {
-        padding: 16px 22px;
-        font-size: 1.05rem;
-      }
-      footer a {
-        font-size: 1.1rem;
-      }
-    }
-
-    /* ========== MOBILE SCREENS (up to 768px) ========== */
-    @media (min-width: 481px) and (max-width: 768px) {
-      body {
-        font-size: 18px;
-        padding-bottom: 90px;
-      }
-      .profile-img {
-        width: 130px;
-        height: 130px;
-      }
-      .hero {
-        padding: 40px 20px 40px;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .hero .specialty {
-        font-size: 1.2rem;
-      }
-      .contact-social a {
-        font-size: 0.85rem;
-        padding: 6px 12px;
-      }
-      .filter-btn {
-        padding: 8px 18px;
-        font-size: 0.9rem;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr;
-        padding: 20px 20px 50px;
-        gap: 24px;
-      }
-      .card-info h3 {
-        font-size: 1.6rem;
-      }
-      .modal-container {
-        width: 95vw;
-        max-width: 95vw;
-        border-radius: 28px;
-        overflow-x: visible;
-      }
-      .modal-header {
-        padding: 18px 20px 8px;
-      }
-      .modal-header h2 {
-        font-size: 1.5rem;
-      }
-      .close-modal {
-        font-size: 36px;
-      }
-      .modal-category {
-        padding: 10px 20px 0;
-      }
-      .slider-area {
-        padding: 16px 20px;
-      }
-      .slider-wrapper {
-        position: relative;
-        background: #020617;
-        border-radius: 28px;
-        overflow: visible;
-        margin: 0;
-      }
-      .slider-img {
-        width: 100%;
-        height: auto;
-        max-height: 65vh;
-        min-height: 300px;
-        object-fit: contain;
-        display: block;
-        border-radius: 24px;
-      }
-      .slider-btn {
-        position: absolute;
-        top: 50%;
-        background: rgba(15, 23, 42, 0.9);
-        backdrop-filter: blur(8px);
-        font-size: 28px;
-        padding: 12px 16px;
-        border-radius: 50px;
-        min-width: 52px;
-        min-height: 52px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-        transition: 0.2s;
-        z-index: 20;
-        border: 1px solid rgba(59,130,246,0.5);
-      }
-      .slider-btn.prev {
-        left: 0;
-        transform: translate(-50%, -50%);
-      }
-      .slider-btn.next {
-        right: 0;
-        transform: translate(50%, -50%);
-      }
-      .slider-btn:hover {
-        background: #3b82f6;
-        transform: translate(-50%, -50%) scale(1.05);
-      }
-      .slider-btn.next:hover {
-        transform: translate(50%, -50%) scale(1.05);
-      }
-      .slider-btn:active {
-        transform: translate(-50%, -50%) scale(0.96);
-      }
-      .slider-btn.next:active {
-        transform: translate(50%, -50%) scale(0.96);
-      }
-      .image-counter {
-        margin-top: 12px;
-        font-size: 0.8rem;
-      }
-      .modal-description {
-        padding: 8px 20px 28px;
-      }
-      .modal-description p {
-        font-size: 0.95rem;
-        padding: 14px 18px;
-      }
-      footer {
-        padding: 14px 18px;
-        font-size: 0.95rem;
-      }
-      footer a {
-        font-size: 1rem;
-        font-weight: 800;
-      }
-    }
-
-    /* extra small devices */
-    @media (min-width: 0px) and (max-width: 480px) {
-      body {
-        padding-bottom: 85px;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .profile-img {
-        width: 110px;
-        height: 110px;
-      }
-      .card-info h3 {
-        font-size: 1.5rem;
-      }
-      .slider-img {
-        min-height: 240px;
-        max-height: 55vh;
-      }
-      .slider-btn {
-        font-size: 22px;
-        padding: 8px 12px;
-        min-width: 44px;
-        min-height: 44px;
-      }
-      footer {
-        padding: 12px 16px;
-        font-size: 0.85rem;
-      }
-      footer a {
-        font-size: 0.9rem;
-        font-weight: 800;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="hero">
-  <!-- Larger profile image -->
-  <img class="profile-img" src="Images/Profile.jpg" alt="Hossam Elganiny profile" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'">
-  <h1>Hossam Elganiny</h1>
-  <div class="badge-exp">
-    <i class="fas fa-code"></i> 3+ years experience
-  </div>
-  <div class="specialty">
-    <i class="fas fa-globe"></i> Software engineer specialized in ASP.NET Core | WordPress
-  </div>
-  <div class="contact-social">
-    <a href="mailto:hossamelsayed676@gmail.com"><i class="fas fa-envelope"></i> hossamelsayed676@gmail.com</a>
-    <a href="https://www.linkedin.com/in/hossamelganiny/"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://github.com/hossamElgainy"><i class="fab fa-github"></i> GitHub</a>
-    <a href="https://web.facebook.com/hossam.elganiny.56"><i class="fab fa-facebook"></i> Facebook</a>
-    <a href="tel:+201127929624"><i class="fas fa-phone-alt"></i> +20 1127929624</a>
-  </div>
+<div id="ambient-layer">
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-gradient"></div>
 </div>
 
-<!-- filter row -->
-<div class="filters">
-  <button class="filter-btn active" data-filter="all"><i class="fas fa-layer-group"></i> All</button>
-  <button class="filter-btn" data-filter="web"><i class="fas fa-laptop-code"></i> Web Apps</button>
-  <button class="filter-btn" data-filter="mobile"><i class="fas fa-mobile-alt"></i> Mobile Apps</button>
-  <button class="filter-btn" data-filter="wordpress"><i class="fab fa-wordpress"></i> WordPress</button>
-</div>
+<nav class="navbar" aria-label="Main">
+  <div class="nav-container">
+    <div class="logo"><a href="index.html">Hossam.dev</a></div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="resume-btn" id="resumeNavBtn"><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
+    </div>
+  </div>
+</nav>
 
-<div id="projectsGrid" class="projects-grid"></div>
+<main>
+<!-- Hero -->
+<section class="page-section--hero hero-modern" aria-labelledby="page-title">
+  <div class="shell hero-inner">
+    <div class="hero-content">
+      <p class="hero-kicker">Software engineer · Egypt</p>
+      <h1 id="page-title">Hi, I'm Hossam <span class="wave" aria-hidden="true">👋</span></h1>
+      <p class="title-highlight">ASP.NET Core, APIs, and WordPress for teams that need reliable delivery.</p>
+      <p class="hero-description">
+        I build web apps and sites that stay maintainable—solid architecture behind the scenes and clear UX up front.
+      </p>
+      <div class="cta-group">
+        <a href="mailto:hossamelsayed676@gmail.com" class="btn btn-primary">Email me <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="#" class="btn btn-secondary" id="resumeBtn">Resume <i class="fas fa-download" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="stats-bar" aria-label="Highlights">
+      <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Projects</span></div>
+      <div class="stat-item"><span class="stat-number">3+</span><span class="stat-label">Years</span></div>
+      <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Satisfaction</span></div>
+    </div>
+  </div>
+</section>
 
-<!-- Fixed footer - enhanced: taller, larger text, bold contact link -->
-<footer>
-  <i class="fas fa-bolt"></i> Don't hesitate to <a href="https://wa.me/+201200396844" target="_blank" rel="noopener noreferrer">contact me</a>
+<!-- Projects -->
+<section id="projects" class="page-section reveal" aria-labelledby="projects-heading">
+  <div class="shell">
+    <header class="section-head">
+      <h2 id="projects-heading">Selected work</h2>
+      <p class="section-desc">Web apps, mobile, and WordPress—use the filters to narrow things down.</p>
+    </header>
+    <div class="filters">
+      <button type="button" class="filter-btn active" data-filter="all"><i class="fas fa-layer-group" aria-hidden="true"></i> All</button>
+      <button type="button" class="filter-btn" data-filter="web"><i class="fas fa-laptop-code" aria-hidden="true"></i> Web Apps</button>
+      <button type="button" class="filter-btn" data-filter="mobile"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile Apps</button>
+      <button type="button" class="filter-btn" data-filter="wordpress"><i class="fab fa-wordpress" aria-hidden="true"></i> WordPress</button>
+    </div>
+    <div id="projectsGrid" class="projects-grid"></div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="page-section page-section--alt about-section reveal" id="about" aria-labelledby="about-heading">
+  <div class="shell">
+    <header class="section-head">
+      <h2 id="about-heading">About me</h2>
+      <p class="section-desc">Focus areas and the stack I use most often.</p>
+    </header>
+    <div class="about-text">
+      <p>
+        I'm a Software Engineer focused on robust backends and interfaces people actually use.
+        ASP.NET Core for APIs and apps, WordPress when clients need a flexible CMS—ACF, WooCommerce, and custom builds.
+      </p>
+      <p>
+        Clean code and iteration matter as much as the first launch. Based in Egypt; I work with teams and clients internationally.
+      </p>
+      <div class="tech-stack">
+        <span>C# / .NET</span>
+        <span>ASP.NET Core MVC</span>
+        <span>Entity Framework</span>
+        <span>SQL Server</span>
+        <span>WordPress</span>
+        <span>JavaScript</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="page-section reveal" aria-labelledby="contact-heading">
+  <div class="shell">
+    <header class="section-head">
+      <h2 id="contact-heading">Contact</h2>
+      <p class="section-desc">Send a short message—scope and timeline are enough to start.</p>
+    </header>
+    <div class="cta-card">
+      <h3>Let's talk</h3>
+      <p>Tell me what you're building and when you need it. I'll get back to you as soon as I can.</p>
+      <div class="cta-actions">
+        <a href="mailto:hossamelsayed676@gmail.com" class="btn btn-primary">Email me</a>
+        <a href="#" class="btn btn-outline-light" id="resumeCtaBtn">Resume PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Minimal Footer -->
+<footer class="footer-minimal">
+  <div class="footer-content">
+    <p>© 2026 Hossam Elganiny. Crafted with <i class="fas fa-heart" style="color:#f43f5e;" aria-hidden="true"></i> for clean code.</p>
+    <div class="social-links">
+      <a href="https://github.com/hossamElgainy" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/hossamelganiny/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:hossamelsayed676@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://web.facebook.com/hossam.elganiny.56" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
 </footer>
 
-<!-- Modal structure -->
+<!-- Modal -->
 <div id="modalOverlay" class="modal-overlay">
   <div class="modal-container">
     <div class="modal-header">
@@ -627,9 +139,9 @@
     <div class="modal-category" id="modalCategories"></div>
     <div class="slider-area">
       <div class="slider-wrapper" id="sliderWrapper">
-        <button class="slider-btn prev" id="prevSlideBtn" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn prev" id="prevSlideBtn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
         <img id="modalSliderImg" class="slider-img" src="" alt="project view">
-        <button class="slider-btn next" id="nextSlideBtn" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+        <button class="slider-btn next" id="nextSlideBtn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
       </div>
       <div class="image-counter" id="imageCounter"></div>
     </div>
@@ -640,160 +152,23 @@
 </div>
 
 <script>
-  // ---------- PROJECTS DATA (multi-category) ----------
+  // ---------- PROJECTS DATA (same as original but enriched with descriptions) ----------
   const projectsData = [
-    
-    {
-      id: 2,
-      name: "Asayel Poultry",
-      categories: ["wordpress"],
-      description: "The Asayel Poultry website highlights a wide range of fresh, high-quality chicken products, including breasts, wings, whole chickens, and more. It emphasizes its integrated farm operations, halal slaughtering, strict safety protocols, and 100% natural feeding. The site also features a product catalog and contact details",
-      thumbnail: "Images/Asayel/asayel1.png",
-      images: [
-        "Images/Asayel/asayel1.png",
-        "Images/Asayel/asayel2.png",
-        "Images/Asayel/asayel3.png",
-        "Images/Asayel/asayel4.png",
-        "Images/Asayel/asayel5.png"
-      ]
-    },{
-      id: 3,
-      name: "Blinkmart",
-      categories: ["mobile"],
-      description: "Blink Mart is a smart supermarket app offering convenient home delivery for groceries, household essentials, and personal care items. It features easy category browsing, fast and secure delivery, and quick search for deals. The app prioritizes data security with encryption and allows users to request data deletion.",
-      thumbnail: "Images/blinkmart/blinkmart8.jpeg",
-      images: [
-        "Images/blinkmart/blinkmart8.jpeg",
-        "Images/blinkmart/blinkmart1.jpeg",
-        "Images/blinkmart/blinkmart6.jpeg",
-        "Images/blinkmart/blinkmart3.jpeg",
-        "Images/blinkmart/blinkmart4.jpeg",
-        "Images/blinkmart/blinkmart2.jpeg",
-        "Images/blinkmart/blinkmart5.jpeg",
-        "Images/blinkmart/blinkmart7.jpeg"      
-      ]
-    },
-    {
-      id: 4,
-      name: "Law House",
-      categories: ["wordpress"],
-      description: "Corporate WordPress website with custom ACF blocks, multilingual support (WPML), and advanced SEO optimization. Lightning-fast performance and Elementor integration.",
-      thumbnail: "Images/lawhouse/lawhouse1.png",
-      images: [
-        "Images/lawhouse/lawhouse1.png",
-        "Images/lawhouse/lawhouse2.png",
-        "Images/lawhouse/lawhouse3.png",
-        "Images/lawhouse/lawhouse4.png",
-        "Images/lawhouse/lawhouse5.png"
-      ]
-    },
-    {
-      id: 6,
-      name: "Glowymall",
-      categories: ["wordpress"],
-      description: "GlowyMall is an e-commerce site focused on beauty and cosmetics, featuring skincare, crystal crafts, and camping accessories. The site emphasizes a user-friendly experience with detailed product descriptions, free shipping, and money-back guarantees. It aims to provide a trusted destination for quality products",
-      thumbnail: "Images/glowymall/glowymall1.png",
-      images: [
-        "Images/glowymall/glowymall1.png",
-        "Images/glowymall/glowymall2.png",
-        "Images/glowymall/glowymall3.png",
-        "Images/glowymall/glowymall4.png",
-        "Images/glowymall/glowymall5.png"
-      ]
-    },
-    {
-      id: 7,
-      name: "Faster B Blue",
-      categories: ["wordpress"],
-      description: "FasterBBlue.com is a laundry equipment specialist offering industrial washing machines, heat dryers, ironing presses, and boilers. It provides technical consultations, employee training, complete laundry outfitting, and professional maintenance services with genuine spare parts for continuous operation.",
-      thumbnail: "Images/fasterb/fasterbblue1.png",
-      images: [
-        "Images/fasterb/fasterbblue1.png",
-        "Images/fasterb/fasterbblue2.png",
-        "Images/fasterb/fasterbblue3.png",
-        "Images/fasterb/fasterbblue4.png",
-        "Images/fasterb/fasterbblue5.png"
-      ]
-    },
-    {
-      id: 11,
-      name: "Lawyer System",
-      categories: ["mobile"],
-      description: "A mobile app for managing legal cases and client communications.",
-      thumbnail: "Images/lawyer/lawyer14.jpeg",
-      images: [
-        "Images/lawyer/lawyer1.jpeg",
-        "Images/lawyer/lawyer2.jpeg",
-        "Images/lawyer/lawyer3.jpeg",
-        "Images/lawyer/lawyer4.jpeg",
-        "Images/lawyer/lawyer5.jpeg",
-        "Images/lawyer/lawyer6.jpeg",
-        "Images/lawyer/lawyer7.jpeg",
-        "Images/lawyer/lawyer8.jpeg",
-        "Images/lawyer/lawyer9.jpeg",
-        "Images/lawyer/lawyer10.jpeg",
-        "Images/lawyer/lawyer11.jpeg",
-        "Images/lawyer/lawyer12.jpeg",
-        "Images/lawyer/lawyer13.jpeg",
-      ]
-    },
-    {
-      id: 8,
-      name: "Apex Marketing",
-      categories: ["wordpress"],
-      description: "Apex Marketing is a digital marketing agency focused on innovative solutions that deliver clear results and drive continuous brand growth. It offers SEO, social media management, and data-driven advertising strategies, fostering integrated digital experiences that blend creativity with strategic intelligence in a competitive market",
-      thumbnail: "Images/apex/apexmarketing4.png",
-      images: [
-        "Images/apex/apexmarketing1.png",
-        "Images/apex/apexmarketing2.png",
-        "Images/apex/apexmarketing3.png",
-        "Images/apex/apexmarketing4.png",
-        "Images/apex/apexmarketing5.png"
-      ]
-    },
-    {
-      id: 9,
-      name: "Premuim Courses",
-      categories: ["web", "mobile"],
-      description: "Premium Courses platform – comprehensive learning management system with ASP.NET Core backend, React frontend, and Flutter mobile app. Features include course enrollment, progress tracking, video lectures, quizzes, and certificate generation. Used by 2000+ active learners.",
-      thumbnail: "Images/premuim/PremuimCourses1.png",
-      images: [
-        "Images/premuim/PremuimCourses1.png",
-        "Images/premuim/PremuimCourses2.png",
-        "Images/premuim/PremuimCourses3.png",
-        "Images/premuim/PremuimCourses4.png"
-      ]
-    },{
-      id: 10,
-      name: "HR Management",
-      categories: ["web", "mobile"],
-      description: "Cross-platform productivity suite with ASP.NET Core Web API, Blazor WASM dashboard, and Flutter mobile app. Real-time sync, team boards, and push notifications. Used by 500+ internal teams.",
-      thumbnail: "Images/hr/hr1.png",
-      images: [
-        "Images/hr/hr1.png",
-        "Images/hr/hr2.png",
-        "Images/hr/hr3.png",
-        "Images/hr/hr4.png",
-        "Images/hr/hr5.png",
-        "Images/hr/hr6.png",
-        "Images/hr/hr7.jpeg",
-        "Images/hr/hr8.jpeg",
-        "Images/hr/hr9.jpeg",
-        "Images/hr/hr10.jpeg",
-        "Images/hr/hr11.jpeg",
-        "Images/hr/hr12.jpeg",
-        "Images/hr/hr13.jpeg",
-        "Images/hr/hr14.jpeg",
-      ]
-    }
-    
+    { id: 2, name: "Asayel Poultry", categories: ["wordpress"], description: "The Asayel Poultry website highlights a wide range of fresh, high-quality chicken products, including breasts, wings, whole chickens, and more. It emphasizes integrated farm operations, halal slaughtering, strict safety protocols, and 100% natural feeding.", thumbnail: "Images/Asayel/asayel1.png", images: ["Images/Asayel/asayel1.png","Images/Asayel/asayel2.png","Images/Asayel/asayel3.png","Images/Asayel/asayel4.png","Images/Asayel/asayel5.png"] },
+    { id: 3, name: "Blinkmart", categories: ["mobile"], description: "Blink Mart is a smart supermarket app offering convenient home delivery for groceries, household essentials, and personal care items. Features easy browsing, secure delivery, and data protection.", thumbnail: "Images/blinkmart/blinkmart8.jpeg", images: ["Images/blinkmart/blinkmart8.jpeg","Images/blinkmart/blinkmart1.jpeg","Images/blinkmart/blinkmart6.jpeg","Images/blinkmart/blinkmart3.jpeg","Images/blinkmart/blinkmart4.jpeg","Images/blinkmart/blinkmart2.jpeg","Images/blinkmart/blinkmart5.jpeg","Images/blinkmart/blinkmart7.jpeg"] },
+    { id: 4, name: "Law House", categories: ["wordpress"], description: "Corporate WordPress website with custom ACF blocks, multilingual support (WPML), and advanced SEO optimization. Lightning-fast performance and Elementor integration.", thumbnail: "Images/lawhouse/lawhouse1.png", images: ["Images/lawhouse/lawhouse1.png","Images/lawhouse/lawhouse2.png","Images/lawhouse/lawhouse3.png","Images/lawhouse/lawhouse4.png","Images/lawhouse/lawhouse5.png"] },
+    { id: 6, name: "Glowymall", categories: ["wordpress"], description: "GlowyMall is an e-commerce site focused on beauty and cosmetics, featuring skincare, crystal crafts, and camping accessories. User-friendly with free shipping and money-back guarantees.", thumbnail: "Images/glowymall/glowymall1.png", images: ["Images/glowymall/glowymall1.png","Images/glowymall/glowymall2.png","Images/glowymall/glowymall3.png","Images/glowymall/glowymall4.png","Images/glowymall/glowymall5.png"] },
+    { id: 7, name: "Faster B Blue", categories: ["wordpress"], description: "FasterBBlue.com is a laundry equipment specialist offering industrial washing machines, heat dryers, ironing presses, and boilers. Provides technical consultations and professional maintenance.", thumbnail: "Images/fasterb/fasterbblue1.png", images: ["Images/fasterb/fasterbblue1.png","Images/fasterb/fasterbblue2.png","Images/fasterb/fasterbblue3.png","Images/fasterb/fasterbblue4.png","Images/fasterb/fasterbblue5.png"] },
+    { id: 11, name: "Lawyer System", categories: ["mobile"], description: "A mobile app for managing legal cases and client communications. Includes case tracking, document sharing, and secure messaging.", thumbnail: "Images/lawyer/lawyer14.jpeg", images: ["Images/lawyer/lawyer1.jpeg","Images/lawyer/lawyer2.jpeg","Images/lawyer/lawyer3.jpeg","Images/lawyer/lawyer4.jpeg","Images/lawyer/lawyer5.jpeg","Images/lawyer/lawyer6.jpeg","Images/lawyer/lawyer7.jpeg","Images/lawyer/lawyer8.jpeg","Images/lawyer/lawyer9.jpeg","Images/lawyer/lawyer10.jpeg","Images/lawyer/lawyer11.jpeg","Images/lawyer/lawyer12.jpeg","Images/lawyer/lawyer13.jpeg"] },
+    { id: 8, name: "Apex Marketing", categories: ["wordpress"], description: "Apex Marketing is a digital marketing agency focused on innovative solutions that deliver clear results. Offers SEO, social media management, and data-driven advertising.", thumbnail: "Images/apex/apexmarketing4.png", images: ["Images/apex/apexmarketing1.png","Images/apex/apexmarketing2.png","Images/apex/apexmarketing3.png","Images/apex/apexmarketing4.png","Images/apex/apexmarketing5.png"] },
+    { id: 9, name: "Premium Courses", categories: ["web", "mobile"], description: "Premium Courses platform – comprehensive learning management system with ASP.NET Core backend, React frontend, and Flutter mobile app. Features include course enrollment, progress tracking, video lectures, quizzes, and certificate generation.", thumbnail: "Images/premuim/PremuimCourses1.png", images: ["Images/premuim/PremuimCourses1.png","Images/premuim/PremuimCourses2.png","Images/premuim/PremuimCourses3.png","Images/premuim/PremuimCourses4.png"] },
+    { id: 10, name: "HR Management", categories: ["web", "mobile"], description: "Cross-platform productivity suite with ASP.NET Core Web API, Blazor WASM dashboard, and Flutter mobile app. Real-time sync, team boards, and push notifications. Used by 500+ internal teams.", thumbnail: "Images/hr/hr1.png", images: ["Images/hr/hr1.png","Images/hr/hr2.png","Images/hr/hr3.png","Images/hr/hr4.png","Images/hr/hr5.png","Images/hr/hr6.png","Images/hr/hr7.jpeg","Images/hr/hr8.jpeg","Images/hr/hr9.jpeg","Images/hr/hr10.jpeg","Images/hr/hr11.jpeg","Images/hr/hr12.jpeg","Images/hr/hr13.jpeg","Images/hr/hr14.jpeg"] }
   ];
 
-  // ------------------- GLOBALS FOR MODAL SLIDER ------------------
+  // ------------------- MODAL & SLIDER LOGIC ------------------
   let currentProjectImages = [];
   let currentImageIndex = 0;
 
-  // DOM elements
   const projectsContainer = document.getElementById("projectsGrid");
   const modalOverlay = document.getElementById("modalOverlay");
   const modalTitle = document.getElementById("modalTitle");
@@ -809,146 +184,90 @@
     modalOverlay.style.display = "none";
     document.body.style.overflow = "auto";
   }
-
   function updateSliderImage() {
     if (currentProjectImages.length === 0) return;
     modalSliderImg.src = currentProjectImages[currentImageIndex];
-    if (imageCounterSpan) {
-      imageCounterSpan.innerText = `${currentImageIndex + 1} / ${currentProjectImages.length}`;
-    }
+    if (imageCounterSpan) imageCounterSpan.innerText = `${currentImageIndex + 1} / ${currentProjectImages.length}`;
   }
-
-  function nextSlide() {
-    if (!currentProjectImages.length) return;
-    currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
-    updateSliderImage();
-  }
-
-  function prevSlide() {
-    if (!currentProjectImages.length) return;
-    currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
-    updateSliderImage();
-  }
-
+  function nextSlide() { if (currentProjectImages.length) { currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length; updateSliderImage(); } }
+  function prevSlide() { if (currentProjectImages.length) { currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length; updateSliderImage(); } }
   function openProjectModal(projectId) {
     const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
-
     modalTitle.innerText = project.name;
     modalDescription.innerText = project.description;
-
     const catMap = { web: "🌐 Web App", mobile: "📱 Mobile App", wordpress: "📰 WordPress" };
-    modalCategoriesContainer.innerHTML = project.categories.map(cat => {
-      let extraClass = cat === "wordpress" ? "wordpress" : "";
-      return `<span class="cat-badge ${extraClass}">${catMap[cat] || cat}</span>`;
-    }).join('');
-
+    modalCategoriesContainer.innerHTML = project.categories.map(cat => `<span class="cat-badge ${cat === 'wordpress' ? 'wordpress' : ''}">${catMap[cat] || cat}</span>`).join('');
     currentProjectImages = [...project.images];
     if (!currentProjectImages.length) currentProjectImages = ["https://picsum.photos/id/0/800/500"];
     currentImageIndex = 0;
     updateSliderImage();
-
     modalOverlay.style.display = "flex";
     document.body.style.overflow = "hidden";
   }
 
+  // RENDER PROJECTS with enhanced card layout
+  let activeFilter = "all";
   function renderProjects() {
-    let filteredProjects = [];
-    if (activeFilter === "all") {
-      filteredProjects = projectsData;
-    } else {
-      filteredProjects = projectsData.filter(project => 
-        project.categories.includes(activeFilter)
-      );
-    }
-
+    let filteredProjects = activeFilter === "all" ? projectsData : projectsData.filter(p => p.categories.includes(activeFilter));
     if (filteredProjects.length === 0) {
-      projectsContainer.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px;">✨ No projects in this category yet. Try another filter!</div>`;
+      projectsContainer.innerHTML = `<div class="empty-state">No projects in this category—try another filter.</div>`;
       return;
     }
-
     projectsContainer.innerHTML = filteredProjects.map(project => {
-      const catDisplay = project.categories.map(c => {
-        let icon = c === 'web' ? '🌐' : (c === 'mobile' ? '📱' : '📰');
-        let label = c === 'wordpress' ? 'WordPress' : (c === 'web' ? 'Web' : 'Mobile');
-        return `<span class="cat-badge ${c === 'wordpress' ? 'wordpress' : ''}">${icon} ${label}</span>`;
-      }).join('');
-      
+      const catDisplay = project.categories.map(c => `<span class="cat-badge ${c === 'wordpress' ? 'wordpress' : ''}">${c === 'web' ? '🌐 Web' : (c === 'mobile' ? '📱 Mobile' : '📰 WordPress')}</span>`).join('');
       return `
         <div class="project-card" data-id="${project.id}">
-          <img class="card-img" src="${project.thumbnail}" alt="${project.name}" loading="lazy" onerror="this.src='https://picsum.photos/id/1/400/260'">
+          <div class="card-img-wrapper"><img class="card-img" src="${project.thumbnail}" alt="${project.name}" loading="lazy" onerror="this.src='https://picsum.photos/id/1/400/260'"></div>
           <div class="card-info">
-            <h3>${project.name}</h3>
-            <div class="category-tags">
-              ${catDisplay}
-            </div>
+            <div class="project-header"><h3>${project.name}</h3><div class="category-tags">${catDisplay}</div></div>
+            <p class="project-bio">${project.description.substring(0, 100)}${project.description.length > 100 ? '...' : ''}</p>
+            <div class="card-footer"><button class="project-demo-btn">View Case Study →</button></div>
           </div>
         </div>
       `;
     }).join('');
-
     document.querySelectorAll('.project-card').forEach(card => {
       const idAttr = card.getAttribute('data-id');
-      if (idAttr) {
-        card.addEventListener('click', (e) => {
-          e.stopPropagation();
-          openProjectModal(parseInt(idAttr));
-        });
-      }
+      if (idAttr) card.addEventListener('click', (e) => { e.stopPropagation(); openProjectModal(parseInt(idAttr)); });
     });
   }
 
-  let activeFilter = "all";
+  // FILTER EVENT
   const filterBtns = document.querySelectorAll('.filter-btn');
   function setActiveFilter(filterValue) {
     activeFilter = filterValue;
-    filterBtns.forEach(btn => {
-      const btnFilter = btn.getAttribute('data-filter');
-      if (btnFilter === filterValue) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
+    filterBtns.forEach(btn => { if (btn.getAttribute('data-filter') === filterValue) btn.classList.add('active'); else btn.classList.remove('active'); });
     renderProjects();
   }
+  filterBtns.forEach(btn => btn.addEventListener('click', () => setActiveFilter(btn.getAttribute('data-filter'))));
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filterValue = btn.getAttribute('data-filter');
-      setActiveFilter(filterValue);
-    });
-  });
-
+  // MODAL CONTROLS
   closeModalBtn.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) closeModal();
-  });
-  prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    prevSlide();
-  });
-  nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    nextSlide();
-  });
-
+  modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+  prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevSlide(); });
+  nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextSlide(); });
   document.addEventListener('keydown', (e) => {
     if (modalOverlay.style.display === 'flex') {
-      if (e.key === 'ArrowLeft') {
-        prevSlide();
-        e.preventDefault();
-      } else if (e.key === 'ArrowRight') {
-        nextSlide();
-        e.preventDefault();
-      } else if (e.key === 'Escape') {
-        closeModal();
-        e.preventDefault();
-      }
+      if (e.key === 'ArrowLeft') { prevSlide(); e.preventDefault(); }
+      else if (e.key === 'ArrowRight') { nextSlide(); e.preventDefault(); }
+      else if (e.key === 'Escape') { closeModal(); e.preventDefault(); }
     }
   });
 
+  function bindResume(el) {
+    el?.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("Resume download would start. (Add your PDF link)");
+    });
+  }
+  bindResume(document.getElementById('resumeBtn'));
+  bindResume(document.getElementById('resumeCtaBtn'));
+  bindResume(document.getElementById('resumeNavBtn'));
+
   renderProjects();
 </script>
+<script src="canvas-bg.js" defer></script>
+<script src="animations.js" defer></script>
 </body>
 </html>
