@@ -304,42 +304,44 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-  emailjs.init({
-    publicKey: "_1kh5tsAbWetJhDzh"
-  });
+    emailjs.init({
+        publicKey: "_1kh5tsAbWetJhDzh"
+    });
 
-  window.addEventListener("load", function () {
+    window.addEventListener("load", function () {
 
-  const templateParams = {
-      name: "Portfolio Visitor",
-      time: new Date().toLocaleString(),
+        const templateParams = {
+            name: "Portfolio Visitor",
+            time: new Date().toLocaleString(),
+            message: "Someone opened the portfolio website.",
 
-      page_url: window.location.href,
-      page_title: document.title,
+            page_url: window.location.href,
+            page_title: document.title,
+            referrer: document.referrer || "Direct Visit",
+            language: navigator.language,
+            screen_size: `${window.screen.width} x ${window.screen.height}`,
+            user_agent: navigator.userAgent
+        };
 
-      referrer: document.referrer || "Direct Visit",
+        console.log("Sending email...");
+        console.log(templateParams);
 
-      language: navigator.language,
+        emailjs.send(
+            "service_yz21ite",
+            "template_01t4zjf",
+            templateParams
+        )
+        .then(function (response) {
+            console.log("EMAIL SENT SUCCESSFULLY");
+            console.log("Status:", response.status);
+            console.log("Text:", response.text);
+        })
+        .catch(function (error) {
+            console.error("EMAIL FAILED");
+            console.error(error);
+        });
 
-      screen_size:
-          `${window.screen.width} x ${window.screen.height}`,
-
-      user_agent: navigator.userAgent
-  };
-
-  emailjs.send(
-      "service_yz21ite",
-      "template_01t4zjf",
-      templateParams
-  )
-  .then(() => {
-      console.log("Visit notification sent successfully.");
-  })
-  .catch((error) => {
-      console.error("EmailJS Error:", error);
-  });
-
-  });
+    });
 </script>
 
 </body>
