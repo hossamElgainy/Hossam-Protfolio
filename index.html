@@ -300,5 +300,47 @@
 </script>
 <script src="canvas-bg.js" defer></script>
 <script src="animations.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init({
+    publicKey: "_1kh5tsAbWetJhDzh"
+  });
+
+  window.addEventListener("load", function () {
+
+  const templateParams = {
+      name: "Portfolio Visitor",
+      time: new Date().toLocaleString(),
+
+      page_url: window.location.href,
+      page_title: document.title,
+
+      referrer: document.referrer || "Direct Visit",
+
+      language: navigator.language,
+
+      screen_size:
+          `${window.screen.width} x ${window.screen.height}`,
+
+      user_agent: navigator.userAgent
+  };
+
+  emailjs.send(
+      "service_yz21ite",
+      "template_01t4zjf",
+      templateParams
+  )
+  .then(() => {
+      console.log("Visit notification sent successfully.");
+  })
+  .catch((error) => {
+      console.error("EmailJS Error:", error);
+  });
+
+  });
+</script>
+
 </body>
 </html>
