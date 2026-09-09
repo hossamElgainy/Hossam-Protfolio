@@ -301,47 +301,378 @@
 <script src="canvas-bg.js" defer></script>
 <script src="animations.js" defer></script>
 
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ============================================
+    // EmailJS Configuration
+    // ============================================
+
     emailjs.init({
         publicKey: "_1kh5tsAbWetJhDzh"
     });
 
-    window.addEventListener("load", function () {
 
-        const templateParams = {
-            name: "Portfolio Visitor",
-            time: new Date().toLocaleString(),
-            message: "Someone opened the portfolio website.",
+    // ============================================
+    // Detect Device
+    // ============================================
 
-            page_url: window.location.href,
-            page_title: document.title,
-            referrer: document.referrer || "Direct Visit",
-            language: navigator.language,
-            screen_size: `${window.screen.width} x ${window.screen.height}`,
-            user_agent: navigator.userAgent
-        };
+    function getDeviceType() {
 
-        console.log("Sending email...");
-        console.log(templateParams);
+        const width = window.innerWidth;
 
-        emailjs.send(
-            "service_yz21ite",
-            "template_01t4zjf",
-            templateParams
-        )
+        if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            return "Mobile";
+        }
+
+        if (width <= 1024) {
+            return "Tablet";
+        }
+
+        return "Desktop";
+    }
+
+
+    // ============================================
+    // Detect Browser
+    // ============================================
+
+    function getBrowser() {
+
+        const userAgent = navigator.userAgent;
+
+        if (userAgent.includes("Edg/")) {
+            return "Microsoft Edge";
+        }
+
+        if (userAgent.includes("OPR/") || userAgent.includes("Opera")) {
+            return "Opera";
+        }
+
+        if (userAgent.includes("Chrome")) {
+            return "Google Chrome";
+        }
+
+        if (userAgent.includes("Firefox")) {
+            return "Mozilla Firefox";
+        }
+
+        if (userAgent.includes("Safari")) {
+            return "Safari";
+        }
+
+        return "Unknown Browser";
+    }
+
+
+    // ============================================
+    // Detect Operating System
+    // ============================================
+
+    function getOperatingSystem() {
+
+        const userAgent = navigator.userAgent;
+
+        if (/Windows NT/i.test(userAgent)) {
+            return "Windows";
+        }
+
+        if (/Mac OS X/i.test(userAgent)) {
+            return "macOS";
+        }
+
+        if (/Android/i.test(userAgent)) {
+            return "Android";
+        }
+
+        if (/iPhone|iPad|iPod/i.test(userAgent)) {
+            return "iOS";
+        }
+
+        if (/Linux/i.test(userAgent)) {
+            return "Linux";
+        }
+
+        return "Unknown OS";
+    }
+
+
+    // ============================================
+    // Get Traffic Source
+    // ============================================
+
+    function getTrafficSource() {
+
+        const referrer = document.referrer;
+
+        if (!referrer) {
+            return "Direct Visit";
+        }
+
+        try {
+
+            const referrerURL = new URL(referrer);
+
+            const hostname = referrerURL.hostname.toLowerCase();
+
+            if (hostname.includes("google")) {
+                return "Google";
+            }
+
+            if (hostname.includes("facebook")) {
+                return "Facebook";
+            }
+
+            if (hostname.includes("instagram")) {
+                return "Instagram";
+            }
+
+            if (hostname.includes("linkedin")) {
+                return "LinkedIn";
+            }
+
+            if (hostname.includes("twitter") || hostname.includes("x.com")) {
+                return "X / Twitter";
+            }
+
+            if (hostname.includes("youtube")) {
+                return "YouTube";
+            }
+
+            return hostname;
+
+        } catch (error) {
+
+            return referrer;
+        }
+    }
+
+
+    // ============================================
+    // Get Visitor Location
+    // ============================================
+
+    fetch("https://ipapi.co/json/")
         .then(function (response) {
-            console.log("EMAIL SENT SUCCESSFULLY");
-            console.log("Status:", response.status);
-            console.log("Text:", response.text);
+
+            if (!response.ok) {
+                throw new Error("Location API request failed");
+            }
+
+            return response.json();
         })
+
+        .then(function (visitor) {
+
+            console.log("Visitor Data:", visitor);
+
+
+            // ============================================
+            // Visitor Information
+            // ============================================
+
+            const ipAddress =
+                visitor.ip || "Unknown";
+
+            const country =
+                visitor.country_name || "Unknown";
+
+            const city =
+                visitor.city || "Unknown";
+
+            const region =
+                visitor.region || "Unknown";
+
+            const timezone =
+                visitor.timezone || "Unknown";
+
+
+            // ============================================
+            // Browser Information
+            // ============================================
+
+            const device =
+                getDeviceType();
+
+            const browser =
+                getBrowser();
+
+            const operatingSystem =
+                getOperatingSystem();
+
+            const language =
+                navigator.language || "Unknown";
+
+            const screenSize =
+                `${window.screen.width} x ${window.screen.height}`;
+
+
+            // ============================================
+            // Page Information
+            // ============================================
+
+            const pageURL =
+                window.location.href;
+
+            const pageTitle =
+                document.title;
+
+            const referrer =
+                document.referrer || "Direct Visit";
+
+            const trafficSource =
+                getTrafficSource();
+
+
+            // ============================================
+            // Visit Time
+            // ============================================
+
+            const visitTime =
+                new Date().toLocaleString("en-US", {
+                    dateStyle: "full",
+                    timeStyle: "long"
+                });
+
+
+            // ============================================
+            // Create Email Message
+            // ============================================
+
+            const message = `
+            🌍  LOCATION
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📍 Country:${country}
+
+            🏙️ City:${city}
+
+            🗺️ Region:${region}
+
+            🌐 IP Address:${ipAddress}
+
+            🕐 Timezone:${timezone}
+
+
+            📊  VISIT INFORMATION
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            🕒 Visit Time:${visitTime}
+
+            📄 Page:${pageTitle}
+
+            🔗 URL:${pageURL}
+
+            🚦 Traffic Source:${trafficSource}
+
+            ↩️ Referrer:${referrer}
+
+
+            💻  DEVICE INFORMATION
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📱 Device:${device}
+
+            🖥️ Operating System:${operatingSystem}
+
+            🌐 Browser:${browser}
+
+            🌎 Language:${language}
+
+            📐 Screen Size:${screenSize}
+
+
+            🔎  BROWSER INFORMATION
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            ${navigator.userAgent}
+            `;
+
+            // ============================================
+            // EmailJS Template Parameters
+            // ============================================
+
+            const templateParams = {
+
+                name: "Portfolio Visitor",
+
+                time: visitTime,
+
+                message: message
+
+            };
+
+
+            // ============================================
+            // Send Email
+            // ============================================
+
+            console.log("Sending visitor notification...");
+            console.log(templateParams);
+
+
+            emailjs.send(
+                "service_yz21ite",
+                "template_0rd8aon",
+                templateParams
+            )
+
+            .then(function (response) {
+
+                console.log(
+                    "EMAIL SENT SUCCESSFULLY"
+                );
+
+                console.log(
+                    "Status:",
+                    response.status
+                );
+
+                console.log(
+                    "Response:",
+                    response.text
+                );
+
+            })
+
+            .catch(function (error) {
+
+                console.error(
+                    "EMAIL FAILED"
+                );
+
+                console.error(
+                    "Status:",
+                    error.status
+                );
+
+                console.error(
+                    "Message:",
+                    error.text
+                );
+
+                console.error(
+                    "Full Error:",
+                    error
+                );
+
+            });
+
+        })
+
         .catch(function (error) {
-            console.error("EMAIL FAILED");
-            console.error(error);
+
+            console.error(
+                "Failed to get visitor location:",
+                error
+            );
+
         });
 
-    });
+});
 </script>
 
 </body>
