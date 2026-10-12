@@ -38,6 +38,7 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -52,6 +53,7 @@ body {
   line-height: 1.65;
   font-size: 16px;
   overflow-x: hidden;
+  max-width: 100%;
   min-height: 100vh;
   padding-bottom: 2.5rem;
   background: var(--void);
@@ -708,6 +710,7 @@ body > *:not(#ambient-layer):not(#modalOverlay) {
   padding: 1px;
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, rgba(34, 211, 238, 0.35), rgba(167, 139, 250, 0.28), rgba(34, 211, 238, 0.15));
+  overflow: hidden;
 }
 
 .about-showcase__glow {
