@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Hossam Elganiny | Software Engineer Portfolio</title>
+  <meta name="description" content="Build your business online with Hossam Elganiny: professional websites, WooCommerce stores, and custom ASP.NET Core software.">
+  <meta name="theme-color" content="#06060f">
+  <title>Hossam Elganiny | Websites, E-commerce & .NET Software</title>
   <!-- Outfit + DM Sans + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -31,23 +33,27 @@
 <main>
 <!-- Hero -->
 <section class="page-section--hero hero-modern" aria-labelledby="page-title">
-  <div class="shell hero-inner hero-inner--center">
-    <div class="hero-content">
-      <p class="hero-kicker">Software engineer · Egypt</p>
-      <h1 id="page-title">Hi, I'm Hossam <span class="wave" aria-hidden="true">👋</span></h1>
-      <p class="title-highlight">ASP.NET Core, APIs, and WordPress for teams that need reliable delivery.</p>
-      <p class="hero-description">
-        I build web apps and sites that stay maintainable—solid architecture behind the scenes and clear UX up front.
-      </p>
-      <div class="cta-group">
-        <a href="mailto:hossamelsayed676@gmail.com" class="btn btn-primary">Email me <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        <a href="#" class="btn btn-secondary" id="resumeBtn">Resume <i class="fas fa-download" aria-hidden="true"></i></a>
-      </div>
+  <div class="shell hero-inner hero-inner--split">
+    <div class="hero-portrait">
+      <img src="Images/Profile.webp" alt="Hossam Elganiny" fetchpriority="high">
+      <div class="portrait-badge"><span class="portrait-badge__dot" aria-hidden="true"></span><span>Software Engineer</span><span aria-hidden="true">·</span><span>.NET & WordPress</span></div>
     </div>
-    <div class="stats-bar" aria-label="Highlights">
-      <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Projects</span></div>
-      <div class="stat-item"><span class="stat-number">3+</span><span class="stat-label">Years</span></div>
-      <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Satisfaction</span></div>
+    <div class="hero-copy">
+      <div class="hero-content">
+        <p class="hero-kicker">Websites · E-commerce · Custom software · Egypt</p>
+        <h1 id="page-title">Digital solutions that help your business grow</h1>
+        <p class="title-highlight">I design and build business websites, online stores, and custom web and mobile applications.</p>
+        <p class="hero-description">From WordPress and WooCommerce to .NET systems and APIs, I turn your business needs into reliable, easy-to-use digital products.</p>
+        <div class="cta-group">
+          <a href="https://wa.me/201200396844?text=Hi%2C%20I%27d%20like%20to%20request%20a%20project%20quote." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request a Quote <i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="#projects" class="btn btn-secondary">View Our Work <i class="fas fa-images" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="stats-bar" aria-label="Highlights">
+        <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Projects</span></div>
+        <div class="stat-item"><span class="stat-number">3+</span><span class="stat-label">Years</span></div>
+        <div class="stat-item"><span class="stat-number">.NET</span><span class="stat-label">Custom software</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -57,7 +63,7 @@
   <div class="shell shell--projects">
     <header class="section-head section-head--center">
       <h2 id="projects-heading">Selected work</h2>
-      <p class="section-desc">Web apps, mobile, and WordPress—use the filters to narrow things down.</p>
+      <p class="section-desc">A selection of websites, online stores, software systems, and apps I've worked on.</p>
     </header>
     <div class="filters filters--center">
       <button type="button" class="filter-btn active" data-filter="all"><i class="fas fa-layer-group" aria-hidden="true"></i> All</button>
@@ -110,17 +116,20 @@
 <section id="contact" class="page-section reveal" aria-labelledby="contact-heading">
   <div class="shell">
     <header class="section-head section-head--center">
-      <h2 id="contact-heading">Contact</h2>
-      <p class="section-desc">Send a short message—scope and timeline are enough to start.</p>
+      <h2 id="contact-heading">Get in touch and request a quote</h2>
+      <p class="section-desc">Tell me what you need and choose the best way to reach you.</p>
     </header>
-    <div class="cta-card">
-      <h3>Let's talk</h3>
-      <p>Tell me what you're building and when you need it. I'll get back to you as soon as I can.</p>
-      <div class="cta-actions">
-        <a href="mailto:hossamelsayed676@gmail.com" class="btn btn-primary">Email me</a>
-        <a href="#" class="btn btn-outline-light" id="resumeCtaBtn">Resume PDF</a>
-      </div>
-    </div>
+    <form class="project-inquiry-form" data-whatsapp-inquiry>
+      <p class="form-preview-note inquiry-wide"><span class="required-marker">*</span> Required fields</p>
+      <label><span class="field-label">Name <span class="required-marker" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></span><input name="name" autocomplete="name" placeholder="Your name" required></label>
+      <label>Company<input name="company" autocomplete="organization" placeholder="Company name"></label>
+      <label><span class="field-label">Service needed <span class="required-marker" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></span><select name="service" required><option value="" selected disabled>Select a service</option><option>Business website</option><option>Online store</option><option>Custom software / .NET</option><option>Other</option></select></label>
+      <label>Email<input name="email" type="email" autocomplete="email" placeholder="Your email address"></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></label>
+      <fieldset class="contact-preference inquiry-wide"><legend>Preferred contact method</legend><label><input type="radio" name="preferredContact" value="WhatsApp" checked> WhatsApp</label><label><input type="radio" name="preferredContact" value="Email"> Email</label><label><input type="radio" name="preferredContact" value="Phone"> Phone</label></fieldset>
+      <label class="inquiry-wide"><span class="field-label">Project details <span class="required-marker" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></span><textarea name="details" rows="5" placeholder="Briefly describe your project or what you need..." required></textarea></label>
+      <div class="inquiry-actions inquiry-wide"><button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp" aria-hidden="true"></i> Send via WhatsApp</button><a href="mailto:hossamelsayed676@gmail.com" class="btn btn-outline-light"><i class="fas fa-envelope" aria-hidden="true"></i> Email directly</a></div>
+    </form>
   </div>
 </section>
 </main>
@@ -154,7 +163,10 @@
 <div id="modalOverlay" class="modal-overlay">
   <div class="modal-container">
     <div class="modal-header">
-      <h2 id="modalTitle">Project Name</h2>
+      <div class="modal-heading">
+        <h2 id="modalTitle">Project Name</h2>
+        <a id="modalDemoLink" class="demo-link" href="#" target="_blank" rel="noopener noreferrer" hidden><i class="fas fa-external-link-alt" aria-hidden="true"></i> View Live Demo</a>
+      </div>
       <button class="close-modal" id="closeModalBtn">&times;</button>
     </div>
     <div class="modal-category" id="modalCategories"></div>
@@ -166,26 +178,25 @@
       </div>
       <div class="image-counter" id="imageCounter"></div>
     </div>
-    <div class="modal-description">
-      <p id="modalDescription"></p>
-    </div>
+    <div class="modal-description" id="modalDescription"></div>
   </div>
 </div>
 
 <script>
   // ---------- PROJECTS DATA (same as original but enriched with descriptions) ----------
   const projectsData = [
-    { id: 1, name: "Maraya Tuwayq", categories: ["wordpress"], description: "Maraya Tuwayq is a WordPress website using WooCommerce for its mirror store, Slider Revolution for banners, and an RTL architecture and interior design theme, likely Antra, featuring galleries, 360-degree tours, blog, testimonials, and WhatsApp contact.", thumbnail: "Images/maraya-tuwayq/1.webp", images: ["Images/maraya-tuwayq/1.webp","Images/maraya-tuwayq/2.webp","Images/maraya-tuwayq/3.webp","Images/maraya-tuwayq/4.webp","Images/maraya-tuwayq/5.webp","Images/maraya-tuwayq/6.webp","Images/maraya-tuwayq/7.webp","Images/maraya-tuwayq/8.webp"] },
-    { id: 2, name: "Asayel Poultry", categories: ["wordpress"], description: "The Asayel Poultry website highlights a wide range of fresh, high-quality chicken products, including breasts, wings, whole chickens, and more. It emphasizes integrated farm operations, halal slaughtering, strict safety protocols, and 100% natural feeding.", thumbnail: "Images/asayel/asayel1.webp", images: ["Images/asayel/asayel1.webp","Images/asayel/asayel2.webp","Images/asayel/asayel3.webp","Images/asayel/asayel4.webp","Images/asayel/asayel5.webp"] },
-    { id: 3, name: "Blinkmart", categories: ["mobile"], description: "Blink Mart is a smart supermarket app offering convenient home delivery for groceries, household essentials, and personal care items. Features easy browsing, secure delivery, and data protection.", thumbnail: "Images/blinkmart/blinkmart8.webp", images: ["Images/blinkmart/blinkmart8.webp","Images/blinkmart/blinkmart1.webp","Images/blinkmart/blinkmart6.webp","Images/blinkmart/blinkmart3.webp","Images/blinkmart/blinkmart4.webp","Images/blinkmart/blinkmart2.webp","Images/blinkmart/blinkmart5.webp","Images/blinkmart/blinkmart7.webp"] },
-    { id: 4, name: "Law House", categories: ["wordpress"], description: "Corporate WordPress website with custom ACF blocks, multilingual support (WPML), and advanced SEO optimization. Lightning-fast performance and Elementor integration.", thumbnail: "Images/lawhouse/lawhouse1.webp", images: ["Images/lawhouse/lawhouse1.webp","Images/lawhouse/lawhouse2.webp","Images/lawhouse/lawhouse3.webp","Images/lawhouse/lawhouse4.webp","Images/lawhouse/lawhouse5.webp"] },
-    { id: 6, name: "Glowymall", categories: ["wordpress"], description: "GlowyMall is an e-commerce site focused on beauty and cosmetics, featuring skincare, crystal crafts, and camping accessories. User-friendly with free shipping and money-back guarantees.", thumbnail: "Images/glowymall/glowymall1.webp", images: ["Images/glowymall/glowymall1.webp","Images/glowymall/glowymall2.webp","Images/glowymall/glowymall3.webp","Images/glowymall/glowymall4.webp","Images/glowymall/glowymall5.webp"] },
-    { id: 7, name: "Faster B Blue", categories: ["wordpress"], description: "FasterBBlue.com is a laundry equipment specialist offering industrial washing machines, heat dryers, ironing presses, and boilers. Provides technical consultations and professional maintenance.", thumbnail: "Images/fasterb/fasterbblue1.webp", images: ["Images/fasterb/fasterbblue1.webp","Images/fasterb/fasterbblue2.webp","Images/fasterb/fasterbblue3.webp","Images/fasterb/fasterbblue4.webp","Images/fasterb/fasterbblue5.webp"] },
-    { id: 11, name: "Lawyer System", categories: ["mobile"], description: "A mobile app for managing legal cases and client communications. Includes case tracking, document sharing, and secure messaging.", thumbnail: "Images/lawyer/lawyer14.webp", images: ["Images/lawyer/lawyer1.webp","Images/lawyer/lawyer2.webp","Images/lawyer/lawyer3.webp","Images/lawyer/lawyer4.webp","Images/lawyer/lawyer5.webp","Images/lawyer/lawyer6.webp","Images/lawyer/lawyer7.webp","Images/lawyer/lawyer8.webp","Images/lawyer/lawyer9.webp","Images/lawyer/lawyer10.webp","Images/lawyer/lawyer11.webp","Images/lawyer/lawyer12.webp","Images/lawyer/lawyer13.webp"] },
-    { id: 8, name: "Apex Marketing", categories: ["wordpress"], description: "Apex Marketing is a digital marketing agency focused on innovative solutions that deliver clear results. Offers SEO, social media management, and data-driven advertising.", thumbnail: "Images/apex/apexmarketing4.webp", images: ["Images/apex/apexmarketing1.webp","Images/apex/apexmarketing2.webp","Images/apex/apexmarketing3.webp","Images/apex/apexmarketing4.webp","Images/apex/apexmarketing5.webp"] },
-    { id: 9, name: "Premium Courses", categories: ["web", "mobile"], description: "Premium Courses platform – comprehensive learning management system with ASP.NET Core backend, React frontend, and Flutter mobile app. Features include course enrollment, progress tracking, video lectures, quizzes, and certificate generation.", thumbnail: "Images/premuim/PremuimCourses1.webp", images: ["Images/premuim/PremuimCourses1.webp","Images/premuim/PremuimCourses2.webp","Images/premuim/PremuimCourses3.webp","Images/premuim/PremuimCourses4.webp"] },
-    { id: 10, name: "HR Management", categories: ["web", "mobile"], description: "Cross-platform productivity suite with ASP.NET Core Web API, Blazor WASM dashboard, and Flutter mobile app. Real-time sync, team boards, and push notifications. Used by 500+ internal teams.", thumbnail: "Images/hr/hr1.webp", images: ["Images/hr/hr1.webp","Images/hr/hr2.webp","Images/hr/hr3.webp","Images/hr/hr4.webp","Images/hr/hr5.webp","Images/hr/hr6.webp","Images/hr/hr7.webp","Images/hr/hr8.webp","Images/hr/hr9.webp","Images/hr/hr10.webp","Images/hr/hr11.webp","Images/hr/hr12.webp","Images/hr/hr13.webp","Images/hr/hr14.webp"] },
-    { id: 12, name: "Mostmer", categories: ["wordpress"], description: "Motasmer is a digital marketing agency delivering tailored strategies, advertising, SEO, social media, branding, content, and web solutions for business growth.", thumbnail: "Images/mostmer/1.webp", images: ["Images/mostmer/2.webp","Images/mostmer/3.webp","Images/mostmer/4.webp","Images/mostmer/5.webp","Images/mostmer/6.webp","Images/mostmer/7.webp","Images/mostmer/8.webp","Images/mostmer/9.webp"] },
+    { id: 1, name: "Maraya Tuwayq", categories: ["wordpress"], description: "Maraya Tuwayq is a WordPress website using WooCommerce for its mirror store, Slider Revolution for banners, and an RTL architecture and interior design theme, likely Antra, featuring galleries, 360-degree tours, blog, testimonials, and WhatsApp contact.", thumbnail: "Images/maraya-tuwayq/1.webp", images: ["Images/maraya-tuwayq/1.webp","Images/maraya-tuwayq/2.webp","Images/maraya-tuwayq/3.webp","Images/maraya-tuwayq/4.webp","Images/maraya-tuwayq/5.webp","Images/maraya-tuwayq/6.webp","Images/maraya-tuwayq/7.webp","Images/maraya-tuwayq/8.webp"], demoUrl: "https://maraya-tuwayq.com/" },
+    { id: 2, name: "Asayel Poultry", categories: ["wordpress"], description: "The Asayel Poultry website highlights a wide range of fresh, high-quality chicken products, including breasts, wings, whole chickens, and more. It emphasizes integrated farm operations, halal slaughtering, strict safety protocols, and 100% natural feeding.", thumbnail: "Images/asayel/asayel1.webp", images: ["Images/asayel/asayel1.webp","Images/asayel/asayel2.webp","Images/asayel/asayel3.webp","Images/asayel/asayel4.webp","Images/asayel/asayel5.webp"], demoUrl: "https://asayelpoultry.com/en/" },
+    { id: 3, name: "Blinkmart", categories: ["mobile"], description: "Blink Mart is a smart supermarket app offering convenient home delivery for groceries, household essentials, and personal care items. Features easy browsing, secure delivery, and data protection.", thumbnail: "Images/blinkmart/blinkmart8.webp", images: ["Images/blinkmart/blinkmart8.webp","Images/blinkmart/blinkmart1.webp","Images/blinkmart/blinkmart6.webp","Images/blinkmart/blinkmart3.webp","Images/blinkmart/blinkmart4.webp","Images/blinkmart/blinkmart2.webp","Images/blinkmart/blinkmart5.webp","Images/blinkmart/blinkmart7.webp"], demoUrl: "https://play.google.com/store/apps/details?id=com.AshalNetworkCompany.blinkmart" },
+    { id: 4, name: "Law House", categories: ["wordpress"], description: "Corporate WordPress website with custom ACF blocks, multilingual support (WPML), and advanced SEO optimization. Lightning-fast performance and Elementor integration.", thumbnail: "Images/lawhouse/lawhouse1.webp", images: ["Images/lawhouse/lawhouse1.webp","Images/lawhouse/lawhouse2.webp","Images/lawhouse/lawhouse3.webp","Images/lawhouse/lawhouse4.webp","Images/lawhouse/lawhouse5.webp"], demoUrl: "https://www.lawhousehurghada.com/" },
+    { id: 6, name: "GlowyMall", categories: ["wordpress"], description: "GlowyMall is an e-commerce site focused on beauty and cosmetics, featuring skincare, crystal crafts, and camping accessories. User-friendly with free shipping and money-back guarantees.", thumbnail: "Images/glowymall/glowymall1.webp", images: ["Images/glowymall/glowymall1.webp","Images/glowymall/glowymall2.webp","Images/glowymall/glowymall3.webp","Images/glowymall/glowymall4.webp","Images/glowymall/glowymall5.webp"], caseStudy: { client: "An online store for beauty and skincare, alongside a range of other products.", need: "Present multiple product categories in a clear, easy-to-browse shopping experience.", solution: "Organize the store layout and visual content to help shoppers explore products and move between categories.", services: "E-commerce website development with WordPress.", technologies: "WordPress · WooCommerce", result: "Verified performance results are not available." } },
+    // demoUrl: "ADD_DEMO_URL_HERE",
+    { id: 7, name: "Faster B Blue", categories: ["wordpress"], description: "FasterBBlue.com is a laundry equipment specialist offering industrial washing machines, heat dryers, ironing presses, and boilers. Provides technical consultations and professional maintenance.", thumbnail: "Images/fasterb/fasterbblue1.webp", images: ["Images/fasterb/fasterbblue1.webp","Images/fasterb/fasterbblue2.webp","Images/fasterb/fasterbblue3.webp","Images/fasterb/fasterbblue4.webp","Images/fasterb/fasterbblue5.webp"], demoUrl: "https://fasterbblue.com/" },
+    { id: 11, name: "Lawyer System", categories: ["mobile"], description: "A mobile app for managing legal cases and client communications. Includes case tracking, document sharing, and secure messaging.", thumbnail: "Images/lawyer/lawyer14.webp", images: ["Images/lawyer/lawyer1.webp","Images/lawyer/lawyer2.webp","Images/lawyer/lawyer3.webp","Images/lawyer/lawyer4.webp","Images/lawyer/lawyer5.webp","Images/lawyer/lawyer6.webp","Images/lawyer/lawyer7.webp","Images/lawyer/lawyer8.webp","Images/lawyer/lawyer9.webp","Images/lawyer/lawyer10.webp","Images/lawyer/lawyer11.webp","Images/lawyer/lawyer12.webp","Images/lawyer/lawyer13.webp"], demoUrl: "https://play.google.com/store/apps/details?id=com.ashanetwork.lawyer" },
+    { id: 8, name: "Apex Marketing", categories: ["wordpress"], description: "Apex Marketing is a digital marketing agency focused on innovative solutions that deliver clear results. Offers SEO, social media management, and data-driven advertising.", thumbnail: "Images/apex/apexmarketing4.webp", images: ["Images/apex/apexmarketing1.webp","Images/apex/apexmarketing2.webp","Images/apex/apexmarketing3.webp","Images/apex/apexmarketing4.webp","Images/apex/apexmarketing5.webp"], demoUrl: "https://apexmarketing1.com/" },
+    { id: 9, name: "Premium Courses", categories: ["web", "mobile"], description: "Premium Courses platform – comprehensive learning management system with ASP.NET Core backend, React frontend, and Flutter mobile app. Features include course enrollment, progress tracking, video lectures, quizzes, and certificate generation.", thumbnail: "Images/premuim/PremuimCourses1.webp", images: ["Images/premuim/PremuimCourses1.webp","Images/premuim/PremuimCourses2.webp","Images/premuim/PremuimCourses3.webp","Images/premuim/PremuimCourses4.webp"], demoUrl: "https://play.google.com/store/apps/details?id=com.ashalnetwork.premiumcourses.premium_courses" },
+    { id: 10, name: "HR Management", categories: ["web", "mobile"], description: "Cross-platform productivity suite with ASP.NET Core Web API, Blazor WASM dashboard, and Flutter mobile app. Real-time sync, team boards, and push notifications. Used by 500+ internal teams.", thumbnail: "Images/hr/hr1.webp", images: ["Images/hr/hr1.webp","Images/hr/hr2.webp","Images/hr/hr3.webp","Images/hr/hr4.webp","Images/hr/hr5.webp","Images/hr/hr6.webp","Images/hr/hr7.webp","Images/hr/hr8.webp","Images/hr/hr9.webp","Images/hr/hr10.webp","Images/hr/hr11.webp","Images/hr/hr12.webp","Images/hr/hr13.webp","Images/hr/hr14.webp"], demoUrl: "https://play.google.com/store/apps/details?id=com.ashal_network_hr_compaies_system&hl=ar" },
+    { id: 12, name: "Mostmer", categories: ["wordpress"], description: "Motasmer is a digital marketing agency delivering tailored strategies, advertising, SEO, social media, branding, content, and web solutions for business growth.", thumbnail: "Images/mostmer/1.webp", images: ["Images/mostmer/2.webp","Images/mostmer/3.webp","Images/mostmer/4.webp","Images/mostmer/5.webp","Images/mostmer/6.webp","Images/mostmer/7.webp","Images/mostmer/8.webp","Images/mostmer/9.webp"], demoUrl: "https://mostmer1.com" },
 
   ];
 
@@ -219,7 +230,18 @@
     const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
     modalTitle.innerText = project.name;
-    modalDescription.innerText = project.description;
+    const details = project.caseStudy || {
+      client: project.description,
+      need: "Present the core information or service through a clear digital experience.",
+      solution: "A website or app showcasing the features and content visible in the project images.",
+      services: "Detailed information about my contribution is not currently available.",
+      technologies: project.categories.includes("wordpress") ? "WordPress" : project.categories.includes("web") ? "ASP.NET Core · Web" : "Mobile app",
+      result: "Verified performance results are not available."
+    };
+    const modalDemoLink = document.getElementById("modalDemoLink");
+    modalDemoLink.href = project.demoUrl || "#";
+    modalDemoLink.hidden = !project.demoUrl;
+    modalDescription.innerHTML = `<p class="case-study-intro">${project.description}</p><div class="case-study-grid">${[["About the client", details.client],["The need", details.need],["The solution", details.solution],["Services provided", details.services],["Technologies", details.technologies],["Results", details.result]].map(([title, value]) => `<section class="case-study-item"><h3>${title}</h3><p>${value}</p></section>`).join("")}</div>`;
     const catMap = { web: "🌐 Web App", mobile: "📱 Mobile App", wordpress: "📰 WordPress" };
     modalCategoriesContainer.innerHTML = project.categories.map(cat => `<span class="cat-badge ${cat === 'wordpress' ? 'wordpress' : ''}">${catMap[cat] || cat}</span>`).join('');
     currentProjectImages = [...project.images];
@@ -298,383 +320,30 @@
   bindResume(document.getElementById('resumeNavBtn'));
 
   renderProjects();
+
+  document.querySelectorAll('[data-whatsapp-inquiry]').forEach(form => {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const message = [
+        'NEW PROJECT INQUIRY',
+        '────────────────────',
+        `Name: ${data.get('name')}`,
+        `Company: ${data.get('company') || 'Not provided'}`,
+        `Service: ${data.get('service')}`,
+        `Preferred contact: ${data.get('preferredContact') || 'Not specified'}`,
+        `Email: ${data.get('email') || 'Not provided'}`,
+        `Phone: ${data.get('phone') || 'Not provided'}`,
+        '',
+        'Project details:',
+        data.get('details')
+      ].join('\n');
+      window.location.href = `https://wa.me/201200396844?text=${encodeURIComponent(message)}`;
+    });
+  });
 </script>
 <script src="canvas-bg.js" defer></script>
 <script src="animations.js" defer></script>
-
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    // ============================================
-    // EmailJS Configuration
-    // ============================================
-
-    emailjs.init({
-        publicKey: "_1kh5tsAbWetJhDzh"
-    });
-
-
-    // ============================================
-    // Detect Device
-    // ============================================
-
-    function getDeviceType() {
-
-        const width = window.innerWidth;
-
-        if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            return "Mobile";
-        }
-
-        if (width <= 1024) {
-            return "Tablet";
-        }
-
-        return "Desktop";
-    }
-
-
-    // ============================================
-    // Detect Browser
-    // ============================================
-
-    function getBrowser() {
-
-        const userAgent = navigator.userAgent;
-
-        if (userAgent.includes("Edg/")) {
-            return "Microsoft Edge";
-        }
-
-        if (userAgent.includes("OPR/") || userAgent.includes("Opera")) {
-            return "Opera";
-        }
-
-        if (userAgent.includes("Chrome")) {
-            return "Google Chrome";
-        }
-
-        if (userAgent.includes("Firefox")) {
-            return "Mozilla Firefox";
-        }
-
-        if (userAgent.includes("Safari")) {
-            return "Safari";
-        }
-
-        return "Unknown Browser";
-    }
-
-
-    // ============================================
-    // Detect Operating System
-    // ============================================
-
-    function getOperatingSystem() {
-
-        const userAgent = navigator.userAgent;
-
-        if (/Windows NT/i.test(userAgent)) {
-            return "Windows";
-        }
-
-        if (/Mac OS X/i.test(userAgent)) {
-            return "macOS";
-        }
-
-        if (/Android/i.test(userAgent)) {
-            return "Android";
-        }
-
-        if (/iPhone|iPad|iPod/i.test(userAgent)) {
-            return "iOS";
-        }
-
-        if (/Linux/i.test(userAgent)) {
-            return "Linux";
-        }
-
-        return "Unknown OS";
-    }
-
-
-    // ============================================
-    // Get Traffic Source
-    // ============================================
-
-    function getTrafficSource() {
-
-        const referrer = document.referrer;
-
-        if (!referrer) {
-            return "Direct Visit";
-        }
-
-        try {
-
-            const referrerURL = new URL(referrer);
-
-            const hostname = referrerURL.hostname.toLowerCase();
-
-            if (hostname.includes("google")) {
-                return "Google";
-            }
-
-            if (hostname.includes("facebook")) {
-                return "Facebook";
-            }
-
-            if (hostname.includes("instagram")) {
-                return "Instagram";
-            }
-
-            if (hostname.includes("linkedin")) {
-                return "LinkedIn";
-            }
-
-            if (hostname.includes("twitter") || hostname.includes("x.com")) {
-                return "X / Twitter";
-            }
-
-            if (hostname.includes("youtube")) {
-                return "YouTube";
-            }
-
-            return hostname;
-
-        } catch (error) {
-
-            return referrer;
-        }
-    }
-
-
-    // ============================================
-    // Get Visitor Location
-    // ============================================
-
-    fetch("https://ipapi.co/json/")
-        .then(function (response) {
-
-            if (!response.ok) {
-                throw new Error("Location API request failed");
-            }
-
-            return response.json();
-        })
-
-        .then(function (visitor) {
-
-            console.log("Visitor Data:", visitor);
-
-
-            // ============================================
-            // Visitor Information
-            // ============================================
-
-            const ipAddress =
-                visitor.ip || "Unknown";
-
-            const country =
-                visitor.country_name || "Unknown";
-
-            const city =
-                visitor.city || "Unknown";
-
-            const region =
-                visitor.region || "Unknown";
-
-            const timezone =
-                visitor.timezone || "Unknown";
-
-
-            // ============================================
-            // Browser Information
-            // ============================================
-
-            const device =
-                getDeviceType();
-
-            const browser =
-                getBrowser();
-
-            const operatingSystem =
-                getOperatingSystem();
-
-            const language =
-                navigator.language || "Unknown";
-
-            const screenSize =
-                `${window.screen.width} x ${window.screen.height}`;
-
-
-            // ============================================
-            // Page Information
-            // ============================================
-
-            const pageURL =
-                window.location.href;
-
-            const pageTitle =
-                document.title;
-
-            const referrer =
-                document.referrer || "Direct Visit";
-
-            const trafficSource =
-                getTrafficSource();
-
-
-            // ============================================
-            // Visit Time
-            // ============================================
-
-            const visitTime =
-                new Date().toLocaleString("en-US", {
-                    dateStyle: "full",
-                    timeStyle: "long"
-                });
-
-
-            // ============================================
-            // Create Email Message
-            // ============================================
-
-            const message = `
-            🌍  LOCATION
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-            📍 Country:${country}
-
-            🏙️ City:${city}
-
-            🗺️ Region:${region}
-
-            🌐 IP Address:${ipAddress}
-
-            🕐 Timezone:${timezone}
-
-
-            📊  VISIT INFORMATION
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-            🕒 Visit Time:${visitTime}
-
-            📄 Page:${pageTitle}
-
-            🔗 URL:${pageURL}
-
-            🚦 Traffic Source:${trafficSource}
-
-            ↩️ Referrer:${referrer}
-
-
-            💻  DEVICE INFORMATION
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-            📱 Device:${device}
-
-            🖥️ Operating System:${operatingSystem}
-
-            🌐 Browser:${browser}
-
-            🌎 Language:${language}
-
-            📐 Screen Size:${screenSize}
-
-
-            🔎  BROWSER INFORMATION
-            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-            ${navigator.userAgent}
-            `;
-
-            // ============================================
-            // EmailJS Template Parameters
-            // ============================================
-
-            const templateParams = {
-
-                name: "Portfolio Visitor",
-
-                time: visitTime,
-
-                message: message
-
-            };
-
-
-            // ============================================
-            // Send Email
-            // ============================================
-
-            console.log("Sending visitor notification...");
-            console.log(templateParams);
-
-
-            emailjs.send(
-                "service_yz21ite",
-                "template_0rd8aon",
-                templateParams
-            )
-
-            .then(function (response) {
-
-                console.log(
-                    "EMAIL SENT SUCCESSFULLY"
-                );
-
-                console.log(
-                    "Status:",
-                    response.status
-                );
-
-                console.log(
-                    "Response:",
-                    response.text
-                );
-
-            })
-
-            .catch(function (error) {
-
-                console.error(
-                    "EMAIL FAILED"
-                );
-
-                console.error(
-                    "Status:",
-                    error.status
-                );
-
-                console.error(
-                    "Message:",
-                    error.text
-                );
-
-                console.error(
-                    "Full Error:",
-                    error
-                );
-
-            });
-
-        })
-
-        .catch(function (error) {
-
-            console.error(
-                "Failed to get visitor location:",
-                error
-            );
-
-        });
-
-});
-</script>
 
 </body>
 </html>
