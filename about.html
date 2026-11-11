@@ -25,7 +25,6 @@
       <a href="about.html" class="active">About</a>
       <a href="index.html#projects">Projects</a>
       <a href="index.html#contact">Contact</a>
-      <a href="#" class="resume-btn" id="resumeNavBtn"><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
     </div>
   </div>
 </nav>
@@ -131,16 +130,6 @@
 </main>
 
 <script>
-  document.getElementById('resumeNavBtn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    const link = document.createElement('a');
-    link.href = "https://drive.google.com/uc?export=download&id=1dfZWVOH4s9GMu8-n0MBRi5Fx2hiuJVAJ";
-    link.download = "Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-  });
-
   document.querySelectorAll('[data-whatsapp-inquiry]').forEach(form => {
     form.addEventListener('submit', event => {
       event.preventDefault();

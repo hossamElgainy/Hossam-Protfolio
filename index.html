@@ -25,7 +25,6 @@
       <a href="about.html">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <a href="#" class="resume-btn" id="resumeNavBtn"><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
     </div>
   </div>
 </nav>
@@ -299,25 +298,6 @@
     else if (e.key === 'ArrowRight') { nextSlide(); e.preventDefault(); }
     else if (e.key === 'Escape') { closeModal(); e.preventDefault(); }
   });
-
- function bindResume(el) {
-    el?.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        const resumeUrl = "https://drive.google.com/uc?export=download&id=1dfZWVOH4s9GMu8-n0MBRi5Fx2hiuJVAJ";
-        
-        // Create a temporary link and trigger download
-        const link = document.createElement('a');
-        link.href = resumeUrl;
-        link.download = "Resume.pdf"; // You can change the filename here
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
-}
-  bindResume(document.getElementById('resumeBtn'));
-  bindResume(document.getElementById('resumeCtaBtn'));
-  bindResume(document.getElementById('resumeNavBtn'));
 
   renderProjects();
 

@@ -204,7 +204,7 @@ body > *:not(#ambient-layer):not(#modalOverlay) {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.nav-pill > a:not(.resume-btn) {
+.nav-pill > a {
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
@@ -214,36 +214,15 @@ body > *:not(#ambient-layer):not(#modalOverlay) {
   transition: color 0.2s ease, background 0.2s ease;
 }
 
-.nav-pill > a:not(.resume-btn):hover {
+.nav-pill > a:hover {
   color: var(--text);
   background: rgba(255, 255, 255, 0.06);
 }
 
-.nav-pill > a:not(.resume-btn).active {
+.nav-pill > a.active {
   color: var(--text);
   background: rgba(34, 211, 238, 0.12);
   box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.25);
-}
-
-.nav-pill .resume-btn {
-  margin-left: 0.25rem;
-}
-
-.resume-btn {
-  background: linear-gradient(135deg, var(--accent), #0891b2);
-  padding: 0.42rem 1rem;
-  border-radius: var(--radius-pill);
-  color: #04201f !important;
-  font-weight: 700;
-  font-size: 0.8rem;
-  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.25);
-  transition: transform 0.2s ease, filter 0.2s ease;
-  text-decoration: none;
-}
-
-.resume-btn:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
 }
 
 /* ---------- Sections ---------- */
@@ -1535,7 +1514,7 @@ body > *:not(#ambient-layer):not(#modalOverlay) {
     padding: 0.3rem;
   }
 
-  .nav-pill > a:not(.resume-btn) {
+  .nav-pill > a {
     padding: 0.38rem 0.65rem;
     font-size: 0.82rem;
   }
